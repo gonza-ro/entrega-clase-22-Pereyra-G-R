@@ -15,7 +15,7 @@ socket.on("products", (data) => {
         return   `<tr>
       <td>${elem.title}</td>
       <td>${elem.price}</td>
-      <td><img src="${elem.thumbnail}" alt="Imagen del producto" style="width: 4rem;"></td>
+      <td><img src="${'../../../../imagenes-productos'}" alt="Imagen del producto" style="width: 4rem;"></td>
       </tr>`;
       })
       .join(" ");
