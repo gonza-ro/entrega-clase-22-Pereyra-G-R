@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "normalizr": "^3.6.2",
     "npm": "^9.4.0"
   },
   "description": "",
