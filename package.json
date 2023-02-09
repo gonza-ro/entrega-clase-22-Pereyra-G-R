@@ -1,31 +1,30 @@
 {
   "type": "module",
-  "name": "entrega-clase-16-pereyra-gonzalo",
+  "name": "entrega-clase-22-pereyra-g-r",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonza-ro/entrega-clase-22-Pereyra-G-R.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "normalizr": "^3.6.2",
-    "npm": "^9.4.0"
+  "bugs": {
+    "url": "https://github.com/gonza-ro/entrega-clase-22-Pereyra-G-R/issues"
   },
-  "description": "",
-  "devDependencies": {
-    "better-sqlite3": "^8.0.1",
-    "dotenv": "^16.0.3",
+  "homepage": "https://github.com/gonza-ro/entrega-clase-22-Pereyra-G-R#readme",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.7",
     "faker": "^6.6.6",
-    "knex": "^2.4.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.1.0",
     "nodemon": "^2.0.20",
-    "socket.io": "^4.5.4",
-    "sqlite3": "^5.1.4"
+    "normalizr": "^3.6.2"
   }
 }
