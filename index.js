@@ -1,17 +1,49 @@
 import express from 'express'
 import {faker} from '@faker-js/faker'
 
+
+// persistencia
+
+let productos_test = [];
+
+
 // Configuramos el idioma español
 faker.locale = 'en'
 const app = express()
+
+
+app.use(express.urlencoded({extended: true}))
 
 let id = 1
 function getNextId(){
     return id++
 }
 
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
+app.get('/formulario', (req, res) => {
+    res.render('form', {productos_test});
+});
+
+app.get('/table', (req, res) => {
+    res.render('form1', {productos_test});
+});
+
+
+app.post('/datos', (req, res) => {
+    productos_test.push(req.body)
+   /*  console.log(productos) */
+    res.redirect('/table')
+});
+
+
 // Vamos a crear una función que nos traiga elementos de forma aleatoria
-function crearAlAzar(id) {
+async function crearAlAzar(id) {
+
+  
+
     return {
         id,
         nombre: faker.name.firstName(),
@@ -20,12 +52,12 @@ function crearAlAzar(id) {
     }
 }
 
-function generarProductos(cant) {
-    const productos = []
+async function generarProductos(cant) {
+    let productos_test = []
     for(let i = 0; i < cant; i++) {
-        productos.push(crearAlAzar(getNextId()))
+        productos_test.push(crearAlAzar(getNextId()))
     }
-    return productos
+    return productos_test
 }
 
 
@@ -33,7 +65,7 @@ function generarProductos(cant) {
 // crear variable de entorno
 const CANT_PRODUCTOS = 5
 
-app.get('/api/productos', (req, res) => {
+app.get('/api/productos_test', (req, res) => {
     const cant = Number(req.query.cant) || CANT_PRODUCTOS
     res.json(generarProductos(cant))
     console.log(generarProductos(cant))
@@ -42,6 +74,6 @@ app.get('/api/productos', (req, res) => {
 // Configuramos nuestro server
 const PORT = 8080
 const srv = app.listen(PORT, () => {
-    console.log('Serer ON, in port: ' + PORT)
+    console.log('Server ON, in port: ' + PORT)
 })
 srv.on('error', error => console.log('Error en el servidor: ' + PORT))

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/gonza-ro/entrega-clase-22-Pereyra-G-R#readme",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "bootstrap": "^5.2.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "faker": "^6.6.6",
